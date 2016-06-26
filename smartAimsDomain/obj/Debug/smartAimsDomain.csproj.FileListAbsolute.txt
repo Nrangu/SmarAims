@@ -1,0 +1,4 @@
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\smartAimsDomain.dll
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\smartAimsDomain.pdb
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\obj\Debug\smartAimsDomain.dll
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\obj\Debug\smartAimsDomain.pdb
