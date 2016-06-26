@@ -1,0 +1,8 @@
+H:\Nrangu\work\learning\smartAims\smartAims\bin\Debug\smartAims.exe.config
+H:\Nrangu\work\learning\smartAims\smartAims\bin\Debug\smartAims.exe
+H:\Nrangu\work\learning\smartAims\smartAims\bin\Debug\smartAims.pdb
+H:\Nrangu\work\learning\smartAims\smartAims\bin\Debug\smartAimsDomain.dll
+H:\Nrangu\work\learning\smartAims\smartAims\bin\Debug\smartAimsDomain.pdb
+H:\Nrangu\work\learning\smartAims\smartAims\obj\Debug\smartAimsTests.csprojResolveAssemblyReference.cache
+H:\Nrangu\work\learning\smartAims\smartAims\obj\Debug\smartAims.exe
+H:\Nrangu\work\learning\smartAims\smartAims\obj\Debug\smartAims.pdb
