@@ -2,3 +2,13 @@ H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\smartAimsDomain.dll
 H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\smartAimsDomain.pdb
 H:\Nrangu\work\learning\smartAims\smartAimsDomain\obj\Debug\smartAimsDomain.dll
 H:\Nrangu\work\learning\smartAims\smartAimsDomain\obj\Debug\smartAimsDomain.pdb
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\smartAimsDomain.dll.config
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\EntityFramework.dll
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\EntityFramework.SqlServer.dll
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\System.Data.SQLite.dll
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\System.Data.SQLite.EF6.dll
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\System.Data.SQLite.Linq.dll
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\EntityFramework.xml
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\EntityFramework.SqlServer.xml
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\bin\Debug\System.Data.SQLite.xml
+H:\Nrangu\work\learning\smartAims\smartAimsDomain\obj\Debug\smartAimsDomain.csprojResolveAssemblyReference.cache
