@@ -1,0 +1,8 @@
+H:\Nrangu\work\learning\smartAims\SmartAimsForms\bin\Debug\SmartAimsForms.exe.config
+H:\Nrangu\work\learning\smartAims\SmartAimsForms\bin\Debug\SmartAimsForms.exe
+H:\Nrangu\work\learning\smartAims\SmartAimsForms\bin\Debug\SmartAimsForms.pdb
+H:\Nrangu\work\learning\smartAims\SmartAimsForms\obj\Debug\SmartAimsForms.csprojResolveAssemblyReference.cache
+H:\Nrangu\work\learning\smartAims\SmartAimsForms\obj\Debug\SmartAimsForms.Properties.Resources.resources
+H:\Nrangu\work\learning\smartAims\SmartAimsForms\obj\Debug\SmartAimsForms.csproj.GenerateResource.Cache
+H:\Nrangu\work\learning\smartAims\SmartAimsForms\obj\Debug\SmartAimsForms.exe
+H:\Nrangu\work\learning\smartAims\SmartAimsForms\obj\Debug\SmartAimsForms.pdb
