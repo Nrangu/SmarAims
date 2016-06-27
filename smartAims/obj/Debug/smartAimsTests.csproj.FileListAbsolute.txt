@@ -6,3 +6,5 @@ H:\Nrangu\work\learning\smartAims\smartAims\bin\Debug\smartAimsDomain.pdb
 H:\Nrangu\work\learning\smartAims\smartAims\obj\Debug\smartAimsTests.csprojResolveAssemblyReference.cache
 H:\Nrangu\work\learning\smartAims\smartAims\obj\Debug\smartAims.exe
 H:\Nrangu\work\learning\smartAims\smartAims\obj\Debug\smartAims.pdb
+H:\Nrangu\work\learning\smartAims\smartAims\bin\Debug\System.Data.SQLite.dll
+H:\Nrangu\work\learning\smartAims\smartAims\bin\Debug\System.Data.SQLite.xml
