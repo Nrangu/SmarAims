@@ -10,8 +10,13 @@ namespace smartAims
     {
         static void Main(string[] args)
         {
-            Domains domain = new Domains();
-            domain.GetData();
+            Console.WriteLine("test start");
+            //Domains domain = new Domains();
+            //domain.GetData();
+            Controller controller = new Controller();
+            controller.GetAims();
+            Console.WriteLine("ok");
+            controller.GetAims();
             Console.ReadKey();
         }
     }
