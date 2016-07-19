@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartAimsTests", "smartAims\smartAimsTests.csproj", "{F079A727-365E-43C2-85E9-62A7151671C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "smartAimsDomain", "smartAimsDomain\smartAimsDomain.csproj", "{4DF103FF-451A-497E-AE55-23ADC75C0FE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartAimsForms", "SmartAimsForms\SmartAimsForms.csproj", "{E5FBF6FA-25B0-47EF-8800-4710ABE09CB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F079A727-365E-43C2-85E9-62A7151671C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F079A727-365E-43C2-85E9-62A7151671C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F079A727-365E-43C2-85E9-62A7151671C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F079A727-365E-43C2-85E9-62A7151671C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF103FF-451A-497E-AE55-23ADC75C0FE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF103FF-451A-497E-AE55-23ADC75C0FE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF103FF-451A-497E-AE55-23ADC75C0FE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF103FF-451A-497E-AE55-23ADC75C0FE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5FBF6FA-25B0-47EF-8800-4710ABE09CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5FBF6FA-25B0-47EF-8800-4710ABE09CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5FBF6FA-25B0-47EF-8800-4710ABE09CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5FBF6FA-25B0-47EF-8800-4710ABE09CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
