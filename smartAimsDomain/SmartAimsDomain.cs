@@ -12,29 +12,30 @@ namespace smartAimsDomain
 {
     public class SQLiteDomain
     {
-        private SQLiteConnection connection = null;
-        private SQLiteCommand command = null;
-        private string DBname = null;
+        private SQLiteConnection _connection = null;
+        private SQLiteCommand _command = null;
+        private string _DBname = null;
+        private string _TableAims = "aims";
 
         public bool isConnected {
-            get{  return connection !=null?  true: false; }    
+            get{  return _connection !=null?  true: false; }    
         }
 
         public bool connect(string DBname)
         {
-            this.DBname = DBname;
+            this._DBname = DBname;
 
-            connection = new SQLiteConnection(string.Format("Data Source={0};", this.DBname));
-            connection.Open();
+            _connection = new SQLiteConnection(string.Format("Data Source={0};", this._DBname));
+            _connection.Open();
             return true;
         }
 
         public string[] GetFields()
         {
             
-            command = new SQLiteCommand("SELECT * FROM 'aims';", connection);
+            _command = new SQLiteCommand("SELECT * FROM 'aims';", _connection);
 
-            SQLiteDataReader reader = command.ExecuteReader();
+            SQLiteDataReader reader = _command.ExecuteReader();
 
             string[] fields = new string[reader.FieldCount];
 
@@ -46,68 +47,31 @@ namespace smartAimsDomain
 
         }
 
-        public void GetAims()
+        public DataTable GetAims()
         {
-            string[] str;
-            command = new SQLiteCommand("SELECT Count(*) FROM 'aims';", connection);
-
-            object reader1 = command.ExecuteScalar();
-            int count = Convert.ToInt32(reader1.ToString());
-
-
-            Console.WriteLine("count = {0}", count);
-
-            command = new SQLiteCommand("SELECT * FROM 'aims';", connection);
-            
-
-
-            SQLiteDataReader reader = command.ExecuteReader();
-
-            string[] fields = new string[ reader.FieldCount];
-
-            
-            for ( int i = 0;  i < reader.FieldCount; i++)
-            {
-                Console.WriteLine(reader.GetName(i));
-                fields[i] = reader.GetName(i);
-            }
-
-            object[,] records = new object[count, reader.FieldCount];
-
-             int k = 0;
-            foreach (DbDataRecord record in reader)
-            {
-                Console.WriteLine(string.Format("{0} {1} {2} ", record["id"].GetType(), record["title"], record["description"]));
-                for (int j = 0; j < reader.FieldCount; j++)
-                {
-                    records[k, j] = record[j];
-                }
-                k++;
-            }
+            return GetTableData(_TableAims);
         }
-        public DataTable GetData()
+        
+        private DataTable GetTableData( string tableName)
         {
-          
-            command = new SQLiteCommand("SELECT Count(*) FROM 'aims';", connection);
 
-            object reader1 = command.ExecuteScalar();
+//            _command = new SQLiteCommand("SELECT Count(*) FROM 'aims';", _connection);
+            _command = new SQLiteCommand("SELECT Count(*) FROM '"+ tableName +"';", _connection);
+
+
+            object reader1 = _command.ExecuteScalar();
             int count = Convert.ToInt32(reader1.ToString());
 
 
-            Console.WriteLine("count = {0}", count);
+            _command = new SQLiteCommand("SELECT * FROM '" + tableName +"'", _connection);
 
-            command = new SQLiteCommand("SELECT * FROM 'aims';", connection);
-
-
-
-            SQLiteDataReader reader = command.ExecuteReader();
+            SQLiteDataReader reader = _command.ExecuteReader();
 
             string[] fields = new string[reader.FieldCount];
 
 
             for (int i = 0; i < reader.FieldCount; i++)
             {
-                Console.WriteLine(reader.GetName(i));
                 fields[i] = reader.GetName(i);
             }
 
@@ -116,7 +80,6 @@ namespace smartAimsDomain
             int k = 0;
             foreach (DbDataRecord record in reader)
             {
-                Console.WriteLine(string.Format("{0} {1} {2} ", record["id"].GetType(), record["title"], record["description"]));
                 for (int j = 0; j < reader.FieldCount; j++)
                 {
                     records[k, j] = record[j];
@@ -124,23 +87,49 @@ namespace smartAimsDomain
                 k++;
             }
 
-            return new DataTable(fields, records);
+            return new DataTable(fields, records, count);
         }
     }
-
+    /// <summary>
+    ///  TO DO
+    /// did 1. Передавать в конструктор количество полей и строк
+    /// did 2. Реализовать свойства для получения количества полей и строк
+    ///     3. По возможности реализовать возможность перебора полей используя foreach
+    ///     4. По возможности реализовать возможность перебора строк используя foreach
+    /// </summary>
     public class DataTable
     {
         private string[] _fields;
         private object[,] _data;
+        private int _countRows = 0;
+
 
         protected DataTable() { }
 
-        public DataTable(string[] fields, object[,] data)
+        public DataTable(string[] fields, object[,] data, int countRows)
         {
             _fields = fields;
             _data = data;
+            _countRows = countRows;
         }
 
+        public int CountFields
+        {
+            get
+            {
+                return _fields.Length;
+            }
+        }
+
+        public int CountRows
+        {
+            get
+            {
+                return _countRows;
+            }
+        }
+
+        // проверяем есть ли поле с именем index в списке полей
         public bool this[string index] {
             get {
 
@@ -156,6 +145,7 @@ namespace smartAimsDomain
 
         }
 
+        // получаем имя поля по индексу
         public string this[int index]
         {
             get
@@ -164,9 +154,26 @@ namespace smartAimsDomain
             }
         }
 
+        // по номеру строки и имени поля получаем данные
+        /// <summary>
+        /// TO DO 
+        /// did реализовать такое же свойство для получения
+        ///     данных по номеру строки и индексу
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="field"></param>
+        /// <returns></returns>
         public object this[int index , string field]{
             get{ /// TODO сделать проверки на ошибки!!!
                 return _data[index, fieldNumber(field)];
+            }
+        }
+
+        public object this[int index, int fieldIndex]
+        {
+            get
+            {
+                return _data[index, fieldIndex];
             }
         }
 
@@ -182,16 +189,22 @@ namespace smartAimsDomain
         }
     }
 
-
+    /// <summary>
+    /// TO DO
+    /// DID 1. Передавать базу как параметр
+    /// 2. Передавать таблицу как параметр
+    /// 3. Реализовать передачу имени таблицы 
+    ///    в запрос через параметры.
+    /// </summary>
     public class Controller
     {
         private SQLiteDomain domain = new SQLiteDomain();
 
         private string DBName;
 
-        public Controller()
+        public Controller(string DBName)
         {
-            DBName = @"DBaims.db";
+            this.DBName = DBName;
         }
 
         public string[] GetFileds()
@@ -202,17 +215,17 @@ namespace smartAimsDomain
             }
             return domain.GetFields();
         }
-
-        public  void GetAims()
+/*
+        public void GetAims()
         {
-            if ( !domain.isConnected)
+            if (!domain.isConnected)
             {
                 domain.connect(DBName);
             }
 
             domain.GetAims();
         }
-
+        */
         public void GetAims(out DataTable dataTable)
         {
             if (!domain.isConnected)
@@ -220,7 +233,7 @@ namespace smartAimsDomain
                 domain.connect(DBName);
             }
 
-            dataTable = domain.GetData();
+            dataTable = domain.GetAims( );
 
         }
     }
